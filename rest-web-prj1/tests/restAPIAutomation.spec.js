@@ -1,10 +1,11 @@
+// F2: Google Map REST API Automation
+
 const { test, expect, request } = require('@playwright/test');
 const { dataConfigs } = require('./config/dataConfigs.js');
 const { APIAutomation } = require('./pages/APIAutomation.js');
 
 let apiAutomation;
 let generatedPlaceId;
-// F2: Google Map REST API Automation
 test.describe('Google Map Rest API Tests', async () => {
     const { restApiConfigs } = dataConfigs;
     

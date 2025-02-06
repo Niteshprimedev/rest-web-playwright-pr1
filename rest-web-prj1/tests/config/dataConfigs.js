@@ -45,7 +45,8 @@ const dataConfigs = {
         }
     },
     webUIConfigs:{
-
+        baseURL: 'https://weather.com/',
+        city: 'Mumbai',
     }
 };
 

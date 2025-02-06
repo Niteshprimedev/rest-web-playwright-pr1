@@ -22,7 +22,7 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
   workers: 1,
-  timeout: 30*1000,
+  timeout: 60*1000,
   expect:{
     timeout: 15*1000,
   },
@@ -39,26 +39,50 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'WebUi',
+      name: 'WebUi-Chrome',
       use: { 
         ...devices['Desktop Chrome'],
-        // ...devices['Desktop Firefox'],
-        baseURL: 'https://linkedin.com/jobs',
+        baseURL: 'https://weather.com/',
         headless: false,
         screenshot: 'on',
         trace: 'on',
-        testIdAttribute: 'data-test-id',
+        testIdAttribute: 'data-testid',
         timeout: 60 * 1000,
-        storageState: 'auth.json',
         // args: ['--start-maximized'],
         viewport: { width: 1920, height: 1080 }
       },
     },
     {
-      name: 'RestApi',
+      name: 'WebUi-Firefox',
+      use: { 
+        ...devices['Desktop Firefox'],
+        baseURL: 'https://weather.com/',
+        headless: false,
+        screenshot: 'on',
+        trace: 'on',
+        testIdAttribute: 'data-testid',
+        timeout: 60 * 1000,
+        // args: ['--start-maximized'],
+        viewport: { width: 1920, height: 1080 }
+      },
+    },
+    {
+      name: 'RestApi-Chrome',
       use: { 
         ...devices['Desktop Chrome'],
-        // ...devices['Desktop Firefox'],
+        baseURL: 'https://rahulshettyacademy.com',
+        headless: false,
+        screenshot: 'on',
+        trace: 'on',
+        extraHTTPHeaders: {
+          'Accept': 'application/json',
+        }
+      },
+    },
+    {
+      name: 'RestApi-Firefox',
+      use: { 
+        ...devices['Desktop Firefox'],
         baseURL: 'https://rahulshettyacademy.com',
         headless: false,
         screenshot: 'on',
