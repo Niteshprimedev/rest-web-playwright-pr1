@@ -38,13 +38,15 @@ const dataConfigs = {
         putConfigs: {
             resource:  `${process.env.PUT_RESC}`,
             params: `&key=${process.env.KEY}`,
+            place_id: process.env.PLACE_ID,
             bodyPayload: { "place_id": process.env.PLACE_ID, "address": "70 Summer walk, USA", "key": process.env.KEY },
             // hard coded place_id 
             // & to be updated in the delete test case;
         }
     },
     webUIConfigs:{
-
+        baseURL: 'https://weather.com/',
+        city: 'Mumbai',
     }
 };
 

@@ -2,7 +2,12 @@
   "name": "rest-web-prj1",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "web-ui-chrome": "npx playwright test tests/webUIAutomation.spec.js --project=WebUi-Chrome",
+    "web-ui-firefox": "npx playwright test tests/webUIAutomation.spec.js --project=WebUi-Firefox",
+    "rest-api-chrome": "npx playwright test tests/restAPIAutomation.spec.js --project=RestApi-Chrome",
+    "rest-api-firefox": "npx playwright test tests/restAPIAutomation.spec.js --project=RestApi-Firefox"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -12,6 +17,7 @@
     "@types/node": "^22.13.1"
   },
   "dependencies": {
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "exceljs": "^4.4.0"
   }
 }
